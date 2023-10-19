@@ -1,0 +1,15 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+
+    gateway:
+      discovery:
+        locator:
+          enabled: true #让网关去注册中心拉去服务 默认规则是服务名和请求名需要一致才能访问

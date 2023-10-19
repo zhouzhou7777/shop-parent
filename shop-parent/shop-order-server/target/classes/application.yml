@@ -10,6 +10,18 @@ spring:
     username: root
     password: 123456
   jpa:
-    hibernate:
+    hibernate: #jpa
       ddl-auto: update
     dialect: org.hibernate.dialect.MySQL8Dialect
+  cloud:
+    nacos: #注册中心
+      discovery:
+        server-addr: localhost:8848
+    sentinel:
+      transport:
+        port: 9999 #跟控制台交流的端口
+        dashboard: localhost:8080 # 指定控制台服务的地址
+logging:
+  level:
+    # feign日志以什么级别监控那个接口
+    com.service.PaymentFeignService: debug
